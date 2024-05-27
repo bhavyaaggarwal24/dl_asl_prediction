@@ -16,6 +16,7 @@ The foundation of our project is the Sign Language MNIST dataset, a modified ver
 Our preprocessing pipeline included several augmentation techniques to improve model robustness:
 
 ● Rescaling: Normalizes pixel values to a range of [0,1] for faster training convergence.
+
 ● Rotation, Width Shift, Height Shift, and Zoom: These augmentations help the model generalise better over different orientations and scales of hand signs.
 
 ● Shear: Simulates a slanting of signs, providing angular diversity.
@@ -39,8 +40,13 @@ latency, making it ideal for live ASL translation.
 ## Real-time Processing Implementation
 
 ● Using OpenCV, video is captured from a standard webcam. MediaPipe Hands is employed to detect and track hands within the video feed in real-time.
+
 ● Once hands are detected, the regions of interest (hand gestures) are cropped, resized, and preprocessed to fit the input requirements of the MobileNet model.
+
 ● The preprocessed images are then fed into the MobileNet model, which classifies the ASL signs in real-time. The model outputs the predicted sign along with the accuracy of the prediction, which is displayed on the video stream.
 
 
-![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/34f8b7e9-60dd-4a26-aa65-f030cfaf1f5f) ![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/fa7c49d7-0aee-4ed5-819a-a2c82c8dd6cb) ![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/62e25f0c-afe7-473c-9325-144baade71bf) ![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/fe157379-bc78-472f-8b25-3baeee23c99a)
+![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/34f8b7e9-60dd-4a26-aa65-f030cfaf1f5f) 
+![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/fa7c49d7-0aee-4ed5-819a-a2c82c8dd6cb)
+![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/62e25f0c-afe7-473c-9325-144baade71bf) 
+![image](https://github.com/bhavyaaggarwal24/dl_asl_prediction/assets/163747248/fe157379-bc78-472f-8b25-3baeee23c99a)
