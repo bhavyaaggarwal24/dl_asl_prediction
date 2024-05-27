@@ -16,7 +16,6 @@ The foundation of our project is the Sign Language MNIST dataset, a modified ver
 Our preprocessing pipeline included several augmentation techniques to improve model robustness:
 
 ● Rescaling: Normalizes pixel values to a range of [0,1] for faster training convergence.
-
 ● Rotation, Width Shift, Height Shift, and Zoom: These augmentations help the model generalise better over different orientations and scales of hand signs.
 
 ● Shear: Simulates a slanting of signs, providing angular diversity.
